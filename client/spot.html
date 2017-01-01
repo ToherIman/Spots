@@ -1,0 +1,52 @@
+<template name="spot">
+  <p>
+    <p>
+      Spot Info
+      <button class="addSpot">Edit spot info</button>
+      <button class="deleteSpot">Delete spot</button>
+    </p>
+    {{#if spot.editing}}
+    <li>
+      SpotID: {{spot._id}}
+    </li>
+    <li>
+      UserID: {{spot.user}}
+    </li>
+    <form class="new-spot">
+      <li>
+        Spot Name<input type="text" name="spotName" placeholder="{{#if spot.name}} {{spot.name}} {{else}} Type new {{/if}}" />
+      </li>
+      <li>
+        Spot Type<input type="text" name="spotType" placeholder="{{#if spot.type}} {{spot.type}} {{else}} Add type of spot {{/if}}" />
+      </li>
+      <li>
+        Description <input type="text" name="description" placeholder="{{#if spot.descr}} {{spot.descr}} {{else}} Add description {{/if}}" />
+      </li>
+      <input type="submit" value="Submit">
+    </form>
+    {{else}}
+    <li>
+      SpotID: {{spot._id}}
+    </li>
+    <li>
+      UserID: {{spot.user}}
+    </li>
+    {{#if spot.name}}
+    <li>
+      Spot Name {{spot.name}}
+    </li>
+    {{/if}}
+    {{#if spot.type}}
+    <li>
+      Spot Type {{spot.type}}
+    </li>
+    {{/if}}
+    {{#if spot.descr}}
+    <li>
+      Spot Description {{spot.descr}}
+    </li>
+    {{/if}}
+    {{/if}}
+
+  </p>
+</template>

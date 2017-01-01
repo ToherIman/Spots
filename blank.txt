@@ -1,0 +1,46 @@
+Spots.find().observe({
+  added: function (document) {
+    var marker = new google.maps.Marker({
+      draggable: true,
+      animation: google.maps.animation.DROP,
+      position: new google.maps.LatLng(document.lat, document.lng),
+      map: map.instance,
+      id: document._id
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function(event) {
+      Spots.update(marker.id, {$set: {lat: event.latLng.lat(), lng: event.latLng.lng()}});
+    });
+    markers[document._id] = marker;
+  },
+  changed: function (newDocument, oldDocument) {
+    markers[newDocument._id].setPosition({lat: newDocument.lat, lng: newDocument.lng});
+  },
+  removed: function (oldDocument) {
+    markers[oldDocument._id].setMap(null);
+    google.maps.event.clearInstanceListeners(markers[oldDocument._id]);
+    delete markers[oldDocument._id];
+  }
+});
+
+///////////////////
+
+Hi David I think code something like this will work...
+We can use dblclick/rightclick
+
+google.maps.event.addListener(marker, "dblclick", function (point) {
+// google.maps.event.clearInstanceListeners(markers[marker._id]);
+markersArray.map(function(mark){
+if(mark.lat==point.latLng.lat() && mark.lng==point.latLng.lng())
+{
+Markers.remove({_id:mark._id})
+marker.setMap(null);
+}
+})
+});
+
+And have a doubt is "clearInstanceListeners()" mandatory?
+What it will do?
+and My code working fine with out it...
+
+kitten hear mastercard text bicycle site parrot

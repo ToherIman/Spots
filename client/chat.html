@@ -1,0 +1,12 @@
+<template name="chat">
+  <div class="message_block">
+    {{#if social}}
+    <p>
+      <span>{{> rooms}}</span>
+      <span>{{> users}}</span>
+    </p>
+    {{else}}
+      {{> messagesBlock}}
+    {{/if}}
+  </div>
+</template>

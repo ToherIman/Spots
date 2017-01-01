@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  width: auto;
+  height: 50px;
+  background-color: #0099ff;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loging_buttons {
+  float: left;
+}
+
+.name {
+  color: white;
+  font-size: 40px;
+  font-family: arial black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.social {
+  float: right;
+}
+
+.mainblock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-basis: 400px;
+}
+
+.map {
+
+}
+
+.spot {
+  width: 400px;
+}
+
+.map_container {
+  width: 500px;
+  max-width: 100%;
+  height: 400px;
+}

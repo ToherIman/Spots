@@ -1,0 +1,19 @@
+<template name="messagesBlock">
+  <div class="messages_block">
+      {{#each messages}}
+        {{> message}}
+      {{/each}}
+  </div>
+  <form class="new-message">
+    <input type="text" name="message" class="message" placeholder="Type new message"/>
+  </form>
+</template>
+
+<template name="message">
+    <div class="message">
+      <a class="message_username">{{username}}</a> <span class="message_timestamp">{{dateFormat createdAt}}</span>
+      <div>
+        <a class="message_text">{{text}}</a>
+      </div>
+    </div>
+</template>

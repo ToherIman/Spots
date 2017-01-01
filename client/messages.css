@@ -1,0 +1,53 @@
+.message_blok {
+  height: 400px;
+  width: 400px;
+  position: relative;
+  bottom: 0;
+
+}
+
+.messages_block {
+  overflow: scroll;
+  height: 352px;
+  width: 400px;
+  word-wrap: normal;
+
+}
+
+input[type=text].message {
+  width: 97%;
+  height: 20px;
+  margin: 20px;
+}
+
+.message {
+  display: inline-grid;
+
+}
+
+.message_username {
+  font-weight: 900;
+  padding-right: .25rem;
+  color: #3d3c40 !important;
+  margin-left: 0;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.message_text {
+  display: inline;
+}
+
+.message_timestamp {
+  text-align: right;
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #babbbf;
+  font-size: 12px;
+  line-height: 1.2rem;
+  width: 36px;
+  margin-right: 0;
+  margin-left: 0;
+}

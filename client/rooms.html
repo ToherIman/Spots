@@ -1,0 +1,15 @@
+<template name="rooms">
+  <p>
+    Rooms:
+  </p>
+  <form class="new-room">
+    <input type="text" name="text" placeholder="Enter room name" />
+
+    <label><input type="checkbox" checked={{checked}} class="toggle-checked"/>Private</label>
+
+  </form>
+
+  {{#each rooms}}
+      <p class="room">{{name}} {{isOwner}} </p>
+  {{/each}}
+</template>

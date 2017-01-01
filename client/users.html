@@ -1,0 +1,13 @@
+<template name="users">
+  <p>
+    Users:
+  </p>
+  <form class="user">
+    <input type="text" name="user" placeholder="find users" />
+  </form>
+  {{#each users}}
+    <li>
+      {{username}}
+    </li>
+  {{/each}}
+</template>
